@@ -1,0 +1,23 @@
+{
+  "name": "rewardcenter",
+  "version": "1.0.0",
+  "description": "Something to help motivate extrinsically motivated individuals",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maxd66/rewardCenter.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maxd66/rewardCenter/issues"
+  },
+  "homepage": "https://github.com/maxd66/rewardCenter#readme",
+  "dependencies": {
+    "inquirer": "^9.1.5"
+  }
+}
