@@ -1,10 +1,9 @@
-const fs = require("fs");
-const rewards = JSON.parse(fs.readFileSync("./data/rewards.json"));
+import fs from "fs";
+import beginPrompt from "./functions/beginPrompt.js";
 
 function main() {
-  console.log("hello world");
-  console.log(rewards);
-  console.log(rewards.nested.option2);
+  console.log("Welcome to the Reward Center!");
+  beginPrompt();
 }
 
 main();
