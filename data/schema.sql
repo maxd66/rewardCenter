@@ -11,7 +11,8 @@ CREATE TABLE achievements (
 CREATE TABLE rewards (
     id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     item VARCHAR(120) UNIQUE NOT NULL,
-    count INT UNSIGNED
+    count INT UNSIGNED,
+    rollAgain BOOL 
 );
 
 CREATE TABLE achieve_reward (
