@@ -18,10 +18,14 @@ class DB {
       .query("SELECT * FROM rewards WHERE id=?", id);
   }
 
-  addReward(item, count) {
+  addReward(item, count, rollAgain) {
     return this.connection
       .promise()
-      .query("INSERT INTO rewards (item, count) VALUES (?, ?)", [item, count]);
+      .query("INSERT INTO rewards (item, count, rollAgain) VALUES (?, ?, ?)", [
+        item,
+        count,
+        rollAgain,
+      ]);
   }
 
   deleteReward(id) {
@@ -35,7 +39,7 @@ class DB {
     return this.connection
       .promise()
       .query(
-        "SELECT achievements.id, achievements.title, rewards.item FROM achieve_reward INNER JOIN rewards ON achieve_reward.reward_id=rewards.id INNER JOIN achievements ON achieve_reward.achievement_id=achievements.id"
+        "SELECT achievements.id, achievements.title, rewards.item FROM achieve_reward INNER JOIN rewards ON achieve_reward.reward_id=rewards.id INNER JOIN achievements ON achieve_reward.achievement_id=achievements.id ORDER BY achievements.id ASC"
       );
   }
 

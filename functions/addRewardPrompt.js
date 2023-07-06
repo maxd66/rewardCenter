@@ -24,9 +24,23 @@ async function addRewardPrompt() {
           : "You must input a number and it must be greater than 0.";
       },
     },
+    {
+      type: "list",
+      name: "rollAgain",
+      message:
+        "Would you like to have the option to roll again after this prize is achieved?",
+      choices: [
+        { name: "Yes", value: 1 },
+        { name: "No", value: 0 },
+      ],
+    },
   ];
   const addition = await inquirer.prompt(addQuestions);
-  const dbResponse = await DB.addReward(addition.item, addition.count);
+  const dbResponse = await DB.addReward(
+    addition.item,
+    addition.count,
+    addition.rollAgain
+  );
   return dbResponse;
 }
 
